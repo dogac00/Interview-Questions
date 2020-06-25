@@ -15,11 +15,12 @@ namespace InterviewQuestions
         {
             int counter = 0;
 
-            for (int i = 0; i < braces.Length; i++)
+            for (int i = 0; i < braces.Length && i >= 0; i++)
             {
-                if (_frontBraces.Contains(braces[i])) counter++;
-
-                else if (_backBraces.Contains(braces[i])) counter--;
+                if (_frontBraces.Contains(braces[i]))
+                    counter++;
+                else if (_backBraces.Contains(braces[i])) 
+                    counter--;
             }
 
             return counter == 0 ? "Valid" : "Not Valid";
